@@ -1,0 +1,33 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: registry.tstllc.net/llisk/alpine-mongo
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    registry: registry.tstllc.net
+
+publish:
+  docker:
+    repo: registry.tstllc.net/llisk/alpine-mongo
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    tag:
+      - latest
+    when:
+      branch:
+        include: [ master, release/* ]
+
+publish:
+  docker:
+    repo: registry.tstllc.net/llisk/alpine-base
+    username: ${REPO_USERNAME}
+    password: ${REPO_PASSWORD}
+    email: ${REPO_EMAILADDR}
+    tag:
+      - ${DRONE_BRANCH}-latest
+      - ${DRONE_BRANCH}.build-${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        exclude: [ master ]

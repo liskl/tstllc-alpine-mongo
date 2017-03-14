@@ -1,4 +1,4 @@
-FROM tstllc-base:latest
+FROM registry.tstllc.net/llisk/alpine-base:latest
 
 # Dev-Ops Team
 MAINTAINER dl_team_devops@tstllc.net
@@ -42,4 +42,3 @@ EXPOSE 27017 28017
 COPY run.sh /root
 ENTRYPOINT [ "/root/run.sh" ]
 CMD [ "mongod" ]
-
