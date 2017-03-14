@@ -3,7 +3,7 @@ FROM registry.tstllc.net/llisk/alpine-base:latest
 # Dev-Ops Team
 MAINTAINER dl_team_devops@tstllc.net
 
-RUN wget wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.3.tgz;
+RUN wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.3.tgz;
 
 RUN tar zxf mongodb-linux-x86_64-2.6.3.tgz;
 
