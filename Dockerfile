@@ -3,9 +3,9 @@ FROM registry.tstllc.net/llisk/alpine-base:latest
 # Dev-Ops Team
 MAINTAINER dl_team_devops@tstllc.net
 
-RUN wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.3.tgz;
+RUN curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.2.tgz;
 
-RUN tar zxf mongodb-linux-x86_64-2.6.3.tgz;
+RUN tar zxf mongodb-linux-x86_64-3.4.2.tgz;
 
 RUN set -ex && \
 	apk add --no-cache --virtual .build-deps \
